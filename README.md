@@ -31,6 +31,7 @@ Currently it is supporting below operations:
 1. Extract API endpoints from a Swagger document using a tag.
 2. Allows to add a parameter (header or query) to all API endpoints of a Swagger document.
 3. Allows to remove a paramter (header or query) from API endpoints of a Swagger document.
+4. Allows to modify API endpoints by prepending an arbitrary text (like version number: "/v1")
 
 The tools has following features:
 
@@ -61,6 +62,7 @@ $ api-organizer --help
 
     extract        extract API endpoints from a Swagger document using a tag
     param          allows to add/remove a parameter (header or query). use "add" and "remove" sub commands
+    prepend        allows to modify API endpoints by prepending an arbitrary text (like version number: "/v1")
     help [cmd]     display help for [cmd]
 ```
 
@@ -106,6 +108,19 @@ configuration | Description | Example Input
 Path to API document| Specify the relative or absolute path to your Swagger API document (should be in **JSON** or **YAML** format)| home/projects/petstore-swagger.json
 Output file name| Specify the name for the output file. If you specify the extension (as .json, .yaml or .yml) the output format will be in that format| public-petstore-api-swagger.yaml
 Parameter name| The name for the parameter to be removed| X-API-KEY
+
+### prepend
+`api-organizer prepend`
+
+Allows to modify API endpoints by prepending an arbitrary text (like version number: "/v1"). 
+When you invoke this command, it will ask few questions to collect below configurations for prepending endpoints.
+
+configuration | Description | Example Input
+--------------|-------------|---------
+Path to API document| Specify the relative or absolute path to your Swagger API document (should be in **JSON** or **YAML** format)| home/projects/petstore-swagger.json
+Output file name| Specify the name for the output file. If you specify the extension (as .json, .yaml or .yml) the output format will be in that format| public-petstore-api-swagger.yaml
+Text to prepend| The text to prepend to all API end points| /v1
+
 
 ### help
 `api-organizer help [cmd]`
