@@ -9,7 +9,8 @@ var logo = require('./lib/logo');
 program
     .version(module.exports.version)
     .command('extract', 'extract API endpoints from a Swagger document using a tag')
-    .command('param', 'allows to add/remove a parameter (header or query). use "add" and "remove" sub commands');
+    .command('param', 'allows to add/remove a parameter (header or query). use "add" and "remove" sub commands')
+    .command('prepend', 'allows to modify API endpoints by prepending an arbitrary text (like version number: "/v1")');
 
 
 //if program was called with no arguments, show help.

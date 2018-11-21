@@ -16,7 +16,7 @@ program.parse(process.argv);
 logo.display(module.exports.description, module.exports.version);
 
 promptUserForConfigurations(function (answers) {
-    actions.extractEndpoints(answers);
+    actions.prependEndpoints(answers);
 });
 
 function promptUserForConfigurations(done) {
@@ -44,15 +44,10 @@ function promptUserForConfigurations(done) {
             return true;
         }
     }, {
-        name: 'tagName',
+        name: 'prependText',
         type: 'input',
-        message: 'Enter the tag name to extract API end points:',
-        default: 'Public'
-    },
-    {
-        name: 'addAuthHeader',
-        type: 'confirm',
-        message: 'Should add Authorization header to all endpoints?'
+        message: 'Enter the text to prepend to API end points:',
+        default: '/v1'
     }];
     inquirer.prompt(questions).then(done);
 }
