@@ -1,5 +1,5 @@
 {
-  "name": "api-catalog-organizer",
+  "name": "api-organizer",
   "description": "An interactive command-line tool to manage API Catalogs",
   "version": "1.0.0",
   "main": "app.js",
